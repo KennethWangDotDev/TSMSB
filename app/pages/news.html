@@ -1,0 +1,25 @@
+---
+layout: default.html
+title: Home
+permalink: true
+---
+
+<section class="news__blog-posts" id="news">
+    <div class="container">
+        <h1 class="section-title">All News.</h1>
+        {{#each collections.blog}}
+            <div class="entries-wrapper">
+                    <a class="thumbnail" href="/{{this.path}}">
+                        <div>
+                            <img src="/assets/images/{{this.thumbnail}}">
+                        </div>
+                    </a>
+                    <div class="textarea">
+                        <span class="date">{{formatDate this.date}}</span>
+                        <a class="title" href="/{{this.path}}">{{this.title}}</a>
+                        <h2 class="desc">{{this.description}}</h2>
+                    </div>
+            </div>
+        {{/each}}
+    </div>
+</section>

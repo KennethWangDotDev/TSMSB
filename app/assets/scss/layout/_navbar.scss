@@ -1,11 +1,109 @@
 .global__nav {
-  @include margin-bottom(2);
-  background-color: color($theme-color, 700);
-  height: 5rem;
+  display: block;
+  background-color: black;
   position: relative;
+  border-bottom: 1px solid black;
   
-    p {
-      @include center;
+  $nav-link-padding: 1.5rem;
+  
+  .container {
+    @include container(60rem, 0, 0)
+  }
+  
+  .logo {
+      display: inline-block;
+      vertical-align: middle;
+      padding-top: $nav-link-padding;
+      padding-bottom: $nav-link-padding;
+      margin-bottom: 0;
+      @include heading-font;
       color: white;
-    }
+      font-weight: 800;
+      @include size(h3);
+      line-height: 0.75;
+      
+            a {
+              text-decoration: none;
+              color: white;
+            }
+      
+
+            .tsmsb {
+                @include link-underline(black, color($purple, 500), 95%, 2px);
+            }
+
+            .dot {
+                color: color($purple, 500);
+                font-size: 3rem;
+                line-height: 0;
+                @include body-font;
+            }
+
+            .website {
+              color: color($grey, 500);
+            }
+
+
+
+
+                @media (max-width: $breakpoint-mobile) {
+                  display: block;
+                  text-align: center;
+                  padding-top: 1.5rem;
+                  padding-bottom: 1rem;
+                }
+
+  }
+
+  ul {
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    
+
+          @media (max-width: $breakpoint-mobile) {
+            display: block;
+            float: none;
+            text-align: center;
+            padding-left: 0;
+            margin-bottom: 0;
+          }
+  }
+
+  li {
+      list-style: none;
+      color: white;
+      display: inline-block;
+      margin-right: 2rem;
+      padding-top: $nav-link-padding;
+      padding-bottom: $nav-link-padding;
+      @include heading-font;
+      text-transform: uppercase;
+      font-weight: 800;
+      @include size(h4);
+      vertical-align: middle;
+      position: relative;
+      bottom: 0.3rem;
+      
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+
+        @media (max-width: $breakpoint-tablet) {
+          @include size(h5);
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            text-align: center;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+          }
+
+
+  }
+
 }

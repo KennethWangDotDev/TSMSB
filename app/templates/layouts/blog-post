@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <!--[if lt IE 9]>
+      <script src="assets/js/polyfill/html5-shiv.js"></script>
+    <![endif]-->
+
+    <script src="https://use.typekit.net/ajx6ixx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  </head>
+  <body>
+
+<nav class="global__nav" id="home">
+    <div class="container">
+        <h1 class="logo"><a href="/"><span class="tsmsb">TSMSB</span><span class="dot">.</span><span class="website">WEBSITE</span></a></h1>
+        <ul>
+           <li><a href="/">Home</a></li>
+           <li><a href="/news">News</a></li>
+           <li><a href="/players">Players</a></li>
+           <li><a href="/#about">About Us</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="blog-post">
+      
+    <div class="container">
+
+      <h1 class="title">{{title}}</h1>
+      <span class="date">{{formatDate date}}</span>
+      <section class="blog-post__content">
+      {{{contents}}}
+      
+      </section>
+      
+    </div>
+    <section class="author-container">
+    <div class="container">
+    {{#each collections.players}}
+        {{#if_eq title ../author}}
+          <h3 class="author">Article written by {{this.title}}.</h3>
+          <div class="author-entries-wrapper">
+                        <img class="thumbnail" src="/assets/images/{{this.thumbnail}}">
+                        <div class="textarea">
+                            <h1 class="title">{{this.title}}</h1>
+                            {{#if this.absa}}<img class="character-icon" src="/assets/images/character_icons/icon_absa.png">{{/if}}
+                            {{#if this.etalus}}<img class="character-icon" src="/assets/images/character_icons/icon_etalus.png">{{/if}}
+                            {{#if this.forsburn}}<img class="character-icon" src="/assets/images/character_icons/icon_forsburn.png">{{/if}}
+                            {{#if this.kragg}}<img class="character-icon" src="/assets/images/character_icons/icon_kragg.png">{{/if}}
+                            {{#if this.kraig}}<img class="character-icon" src="/assets/images/character_icons/icon_kraig.png">{{/if}}
+                            {{#if this.maypul}}<img class="character-icon" src="/assets/images/character_icons/icon_maypul.png">{{/if}}
+                            {{#if this.orcane}}<img class="character-icon" src="/assets/images/character_icons/icon_orcane.png">{{/if}}
+                            {{#if this.wrastor}}<img class="character-icon" src="/assets/images/character_icons/icon_wrastor.png">{{/if}}
+                            {{#if this.zetterburn}}<img class="character-icon" src="/assets/images/character_icons/icon_zetterburn.png">{{/if}}
+                            <h2 class="desc">{{this.description}}</h2>
+                            <div class="social-icon-container">
+                                {{#if this.twitterLink}}<a target="_blank"  class="social-icon" href="{{this.twitterLink}}"><img src="/assets/images/twitter-icon.png">{{/if}}{{#if this.twitchLink}}</a><a target="_blank"  class="social-icon" href="{{this.twitchLink}}"><img src="/assets/images/twitch-icon.png"></a>{{/if}}{{#if this.steamLink}}<a target="_blank" class="social-icon" href="{{this.steamLink}}"><img src="/assets/images/steam-icon.png"></a>{{/if}}
+                            </div>
+                        </div>
+                </div>
+        {{/if_eq}}
+      {{/each}}
+      </div>
+    </section>
+    
+</div>
+
+<section class="global__footer">
+  <p>This is the footer.</p>
+</section>
+
+    <!--[if lt IE 9]>
+      <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+      <script src="assets/js/polyfill/ie-love.js"></script>
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+      <script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <!--<![endif]-->
+    <script src="/assets/js/merged.js"></script>
+  </body>
+</html>

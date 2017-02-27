@@ -1,0 +1,41 @@
+---
+layout: default.html
+title: Home
+permalink: true
+---
+
+<section class="players__player-overview" id="players">
+
+    <div class="container">
+        
+        <h1 class="section-title">Player Roster.</h1>
+
+
+        {{#each collections.players}}
+                {{#if this.show}}
+                <div class="entries-wrapper">
+                        <img class="thumbnail" src="/assets/images/{{this.thumbnail}}">
+                        <div class="textarea">
+                            <h1 class="title">{{this.title}}</h1>
+                            {{#if this.absa}}<img class="character-icon" src="/assets/images/character_icons/icon_absa.png">{{/if}}
+                            {{#if this.etalus}}<img class="character-icon" src="/assets/images/character_icons/icon_etalus.png">{{/if}}
+                            {{#if this.forsburn}}<img class="character-icon" src="/assets/images/character_icons/icon_forsburn.png">{{/if}}
+                            {{#if this.kragg}}<img class="character-icon" src="/assets/images/character_icons/icon_kragg.png">{{/if}}
+                            {{#if this.kraig}}<img class="character-icon" src="/assets/images/character_icons/icon_kraig.png">{{/if}}
+                            {{#if this.maypul}}<img class="character-icon" src="/assets/images/character_icons/icon_maypul.png">{{/if}}
+                            {{#if this.orcane}}<img class="character-icon" src="/assets/images/character_icons/icon_orcane.png">{{/if}}
+                            {{#if this.wrastor}}<img class="character-icon" src="/assets/images/character_icons/icon_wrastor.png">{{/if}}
+                            {{#if this.zetterburn}}<img class="character-icon" src="/assets/images/character_icons/icon_zetterburn.png">{{/if}}
+                            <h2 class="desc">{{this.description}}</h2>
+                            <div class="social-icon-container">
+                                {{#if this.twitterLink}}<a target="_blank"  class="social-icon" href="{{this.twitterLink}}"><img src="/assets/images/twitter-icon.png">{{/if}}{{#if this.twitchLink}}</a><a target="_blank"  class="social-icon" href="{{this.twitchLink}}"><img src="/assets/images/twitch-icon.png"></a>{{/if}}{{#if this.steamLink}}<a target="_blank" class="social-icon" href="{{this.steamLink}}"><img src="/assets/images/steam-icon.png"></a>{{/if}}
+                            </div>
+                        </div>
+                </div>
+                {{/if}}
+        {{/each}}
+
+
+    </div>
+    
+</section>

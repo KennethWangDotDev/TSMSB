@@ -310,4 +310,4 @@
 
 }));
 
-$('a').smoothScroll({offset: -25});
+$('a').smoothScroll({offset: 3});

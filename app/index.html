@@ -1,0 +1,101 @@
+---
+layout: default.html
+title: Home
+permalink: false
+---
+
+<section class="home__blog-posts" id="news">
+
+    <div class="container">
+
+        <h1 class="section-title">Latest News.</h1>
+
+        {{#eachupto collections.blog 2}}
+            <div class="entries-wrapper">
+                    <a class="thumbnail" href="/{{this.path}}">
+                        <div>
+                            <img src="/assets/images/{{this.thumbnail}}">
+                        </div>
+                    </a>
+                    <div class="textarea">
+                        <span class="date">{{formatDate this.date}}</span>
+                        <a class="title" href="/{{this.path}}">{{this.title}}</a>
+                        <h2 class="desc">{{this.description}}</h2>
+                    </div>
+            </div>
+        {{/eachupto}}
+
+        <h3 class="view-more"><a href="/news">View All News &rarr;</a></h3>
+
+    </div>
+
+</section>
+
+
+
+
+
+<section class="home__player-overview" id="players">
+
+    <div class="container">
+        
+        <h1 class="section-title">Player Overview.</h1>
+
+
+        {{#eachupto collections.players 10}}
+                {{#if this.show}}
+                <div class="entries-wrapper">
+                        <img class="thumbnail" src="/assets/images/{{this.thumbnail}}">
+                        <div class="textarea">
+                            <h1 class="title">{{this.title}}</h1>
+                            {{#if this.absa}}<img class="character-icon" src="/assets/images/character_icons/icon_absa.png">{{/if}}
+                            {{#if this.etalus}}<img class="character-icon" src="/assets/images/character_icons/icon_etalus.png">{{/if}}
+                            {{#if this.forsburn}}<img class="character-icon" src="/assets/images/character_icons/icon_forsburn.png">{{/if}}
+                            {{#if this.kragg}}<img class="character-icon" src="/assets/images/character_icons/icon_kragg.png">{{/if}}
+                            {{#if this.kraig}}<img class="character-icon" src="/assets/images/character_icons/icon_kraig.png">{{/if}}
+                            {{#if this.maypul}}<img class="character-icon" src="/assets/images/character_icons/icon_maypul.png">{{/if}}
+                            {{#if this.orcane}}<img class="character-icon" src="/assets/images/character_icons/icon_orcane.png">{{/if}}
+                            {{#if this.wrastor}}<img class="character-icon" src="/assets/images/character_icons/icon_wrastor.png">{{/if}}
+                            {{#if this.zetterburn}}<img class="character-icon" src="/assets/images/character_icons/icon_zetterburn.png">{{/if}}
+                            <h2 class="desc">{{this.description}}</h2>
+                            <div class="social-icon-container">
+                                {{#if this.twitterLink}}<a target="_blank"  class="social-icon" href="{{this.twitterLink}}"><img src="/assets/images/twitter-icon.png">{{/if}}{{#if this.twitchLink}}</a><a target="_blank"  class="social-icon" href="{{this.twitchLink}}"><img src="/assets/images/twitch-icon.png"></a>{{/if}}{{#if this.steamLink}}<a target="_blank" class="social-icon" href="{{this.steamLink}}"><img src="/assets/images/steam-icon.png"></a>{{/if}}
+                            </div>
+                        </div>
+                </div>
+                {{/if}}
+        {{/eachupto}}
+
+        <h3 class="view-more"><a href="/players">View Full Roster &rarr;</a></h3>
+
+    </div>
+    
+</section>
+
+
+
+<section class="home__about-us" id="about">
+
+    <div class="container">
+        
+        <div class="left">
+            
+            <h1 class="section-title">About Us.</h1>
+            <h2 class="section-subtitle">Get to know TSMSB.</h2>
+
+        </div>
+        <div class="right">
+
+            <p class="desc">TSMSB is a World Premier Esports Club founded in November, 2013 by MSB, a former star player in League of Legends. MSB is the Chief Executive Officer of the club, which currently includes professional teams in Battlerite, Counter-Strike: Global Offensive, Hearthstone, Super Smash Bros. Melee, and Rivals of Aether.</p>
+
+            <p class="desc">Our crew was built with the desire to bring new innovation into Esports team management and business whilst upholding our core values of professionalism. We create the best atmosphere for the players which stems from the extensive experience of the Founder and core staff, who all know the players and teams desires from playing and competing themselves. The staff consists of multiple nationalities and covers several years of combined experience in this young and growing Esports industry. This allows us to challenge the status quo and be truly innovative. Our ultimate goal is to help pushing Esports to the next level with our club already being leader for its team achievements coupled with high quality content output.</p>
+
+            <p class="desc">Our reach exceeds tens of hundreds of views every month on multiple online platforms and continues to rise with the teams and players success. The talent development, care and support from the club has led the teams and players to every major tournament and league so far. Our NA Battlerite team features one of the best Croaks in North America, and our Rivals of Aether team features the undisputable best Rivals player in the world.</p>
+
+            <p class="desc">TSMSB has worked collaboratively with top tier brands such as Pringles, and has produced a dynamic merchandise portfolio ranging from clothing to gaming accessories.</p>
+            
+        </div>
+
+    </div>
+
+</section>

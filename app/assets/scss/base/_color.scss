@@ -314,6 +314,10 @@ $blue-grey: (
   900:  #263238
 );
 
-$theme-color: $blue;
-$secondary-color: $red;
+$theme-color: $purple;
+$secondary-color: $grey;
 $body-color: rgb(51, 51, 51);
+
+body {
+  background-color: #212121;
+}

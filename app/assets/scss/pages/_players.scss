@@ -1,0 +1,149 @@
+.players__player-overview {
+    background-color: color($grey, 100);
+    
+
+    
+    .container {
+        @include container(75rem, 0, 2.5);
+        lost-utility: clearfix;
+    }
+
+
+    .section-title {
+        color: color($purple, 500);
+        text-transform: uppercase;
+        @include size(h2);
+        font-weight: 800;
+        letter-spacing: -0.09rem;
+        @include margin-bottom(2);
+    }
+
+
+        .entries-wrapper {
+            lost-column: 1/2;
+            height: 14rem;
+            margin-bottom: 2rem;
+            position: relative;
+            border-bottom: 1px solid color($grey, 400);
+            overflow:hidden;
+            _overflow:visible;
+            zoom:1;
+
+            @media (max-width: ($breakpoint-tablet - 16em)) {
+                lost-column: 1/1;
+            }
+            @media (max-width: $breakpoint-mobile - 15em) {
+                height: auto;
+            }
+        }
+
+
+                $players-image-dim: 12rem;
+
+                .thumbnail {
+                    width: $players-image-dim;
+                    height: $players-image-dim;
+                    border: 3px solid color($purple, 500);
+                    float: left;
+                    display: block;
+                    margin-right: 1.5rem;
+                    vertical-align: top;
+                    
+                    @media (max-width: ($breakpoint-tablet)) {
+                        width: 9rem;
+                        height: 9rem;
+                        margin-right: 1rem;
+                    }
+ 
+
+                    @media (max-width: ($breakpoint-tablet - 16em)) {
+                        width: 12rem;
+                        height: 12rem;
+                    }
+
+                    @media (max-width: $breakpoint-mobile) {
+                        width: 9rem;
+                        height: 9rem;
+                    }
+
+                    @media (max-width: $breakpoint-mobile - 15em) {
+                        float: none;
+                        width: 6rem;
+                        height: 6rem;
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                    
+                 
+
+                .textarea {
+                    vertical-align: top;
+                    overflow:hidden;
+                    _overflow:visible;
+                    zoom:1;
+                    
+                }
+
+                    .title {
+                        @include size(h4);
+                        text-transform: uppercase;
+                        letter-spacing: -0.05rem;
+                        color: color($purple, 500);
+                        margin-bottom: 0;
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-right: 0.6rem;
+                        
+                        @media (max-width: ($breakpoint-tablet - 16em)) {
+                            max-width: 36rem;
+                        }
+                    }
+
+                        .character-icon {
+                            display: inline-block;
+                            vertical-align: middle;
+                            width: 1.75rem;
+                            height: 1.75rem;
+                            margin-left: 0.1rem;
+                        }
+
+
+                    .desc {
+                        @include size(small);
+                        margin-top: 0.6rem;
+                        width: 100%;
+                        max-width: 17rem;
+                        @media (max-width: ($breakpoint-tablet - 16em)) {
+                            max-width: 36rem;
+                        }
+                    }
+
+                    .social-icon-container {
+                        position: absolute;
+                        bottom: 1.25rem;
+                        right: 1.25rem;
+                        @media (max-width: $breakpoint-mobile - 15em) {
+                            bottom: initial;
+                            top: 0rem;
+                        }
+                    }
+
+                    .social-icon {
+                        text-decoration: none;
+                        
+                        img {
+                            width: 2rem;
+                            height: 2rem;
+                            display: inline-block;
+                            margin-left: 0.3rem;
+                            float: right;
+                            
+                            @media (max-width: $breakpoint-mobile - 15em) {
+                                width: 1.75rem;
+                                height: 1.75rem;
+                            }
+                        }
+                    }
+  
+}

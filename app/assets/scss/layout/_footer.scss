@@ -1,6 +1,5 @@
 .global__footer {
-  @include margin-top(3);
-  background-color: color($theme-color, 900);
+  background-color: color($grey, 900);
   height: 5rem;
   position: relative;
   

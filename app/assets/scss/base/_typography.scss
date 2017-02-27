@@ -3,65 +3,92 @@
 // -----------------------------------------------------------------------------
 
 $line-height: 1.4;
-$heading-font: "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
+$heading-font: "nimbus-sans-condensed", "Helvetica Neue", Helvetica, arial, sans-serif;
 $body-font: "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
 
 html {
   font-size: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+
+
+
+@mixin heading-font {
+  // font-family: Impact, "Times New Roman", Times, serif;
+  // .fonts-loaded & {
+    font-family: "nimbus-sans-condensed", "Helvetica Neue", Helvetica, arial, sans-serif;
+  //}
+}
+@mixin body-font {
+  // font-family: "proxima-nova", Helvetica, arial, sans-serif;
+  // .fonts-loaded & {
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
+  //}  
 }
 
 body {
   line-height: $line-height;
-  font-family: $body-font;
   color: $body-color;
+  @include body-font;
 }
 
 /* 
  * Modular scale
- * http://www.modularscale.com/?1.25&em&1.33&web&text
+ * http://www.modularscale.com/?1.2&em&1.3&web&text
 */
 
 $type-scale: (
   hero: 6rem, // deviates from modular scale
-  sub-hero: 5.202rem,
-  h1: 3.911rem,
-  h2: 2.941rem,
-  h3: 2.211rem,
-  h4: 1.663rem,
-  p: 1.25rem,
-  small: 1rem // deviates from modular scale
+  sub-hero: 4.456rem,
+  h1: 3.427em,
+  h2: 2.636rem,
+  h3: 2.028rem,
+  h4: 1.56rem,
+  p: 1.2rem,
+  small: 1.05rem // deviates from modular scale
 );
 
 /* 
  * Modular scale
- * http://www.modularscale.com/?1.25&em&1.25&web&text
+ * http://www.modularscale.com/?1.1&em&1.3&web&text
 */
 
 $type-scale-tablet: (
-  hero: 4.768rem,
-  sub-hero: 3.815rem,
-  h1: 3.052rem,
-  h2: 2.441rem,
-  h3: 1.953em,
-  h4: 1.563rem,
-  p: 1.25rem, 
+  hero: 5.309rem,
+  sub-hero: 4.084rem,
+  h1: 3.142rem,
+  h2: 2.417rem,
+  h3: 1.859em,
+  h4: 1.43rem,
+  p: 1.1rem, 
   small: 1rem
 );
 
 
 /* 
  * Modular scale
- * http://www.modularscale.com/?1.1&em&1.25&web&text
+ * http://www.modularscale.com/?1.05&em&1.2&web&text
 */
 
 $type-scale-mobile: (
-  hero: 4.196rem,
-  sub-hero: 3.357rem,
-  h1: 2.686rem,
-  h2: 2.148rem,
-  h3: 1.719rem,
-  h4: 1.375rem,
-  p: 1.1rem,
+  hero: 3.135rem,
+  sub-hero: 2.613rem,
+  h1: 2.177rem,
+  h2: 1.814rem,
+  h3: 1.512rem,
+  h4: 1.26rem,
+  p: 1.05rem,
   small: 0.94rem // deviates from modular scale
 );
 
@@ -101,15 +128,25 @@ $whitespace: $line-height * map-get($type-scale, p);
   }
 }
 
-h1 {@include size(h1);}
-h2 {@include size(h2);}
-h3 {@include size(h3);}
-h4 {@include size(h4);}
-p {@include size(p);}
-li {@include size(p);}
-small {@include size(small);}
+@mixin padding-bottom($level) {
+  padding-bottom: $line-height * map-get($type-scale, p) * $level;
+  @media (max-width: $breakpoint-tablet) {
+     padding-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
+  }
+  @media (max-width: $breakpoint-mobile) {
+     padding-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
+  }
+}
 
-h1 {font-family: $heading-font}
+@mixin padding-top($level) {
+  padding-top: $line-height * map-get($type-scale, p) * $level;
+  @media (max-width: $breakpoint-tablet) {
+     padding-top: $line-height * map-get($type-scale-tablet, p) * $level;
+  }
+  @media (max-width: $breakpoint-mobile) {
+     padding-top: $line-height * map-get($type-scale-mobile, p) * $level;
+  }
+}
 
 h1,
 h2,
@@ -144,10 +181,12 @@ cite {
 }
 
 
-@mixin container($width: 48rem) {
+@mixin container($width: 60rem, $margin: 1, $padding: 0) {
   margin: auto;
-  @include margin-top(1);
-  @include margin-bottom(1);
+  @include margin-top($margin);
+  @include margin-bottom($margin);
+  @include padding-top($padding);
+  @include padding-bottom($padding);
   max-width: $width;
   padding-left: 1rem;
   padding-right: 1rem;
