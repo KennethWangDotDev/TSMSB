@@ -1,7 +1,7 @@
 {
-  "name": "kennethstarterkit",
+  "name": "tsmsb.website",
   "version": "2.0.0",
-  "description": "Lightweight Sass + Gulp Boilerplate",
+  "description": "Website for tsmsb",
   "main": "gulpfile.js",
   "dependencies": {},
   "devDependencies": {
@@ -45,12 +45,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kennethwang14/KennethStarterKit.git"
+    "url": "git+https://github.com/kennethwang14/TSMSB.git"
   },
   "author": "Kenneth Wang",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kennethwang14/KennethStarterKit/issues"
+    "url": "https://github.com/kennethwang14/TSMSB/issues"
   },
-  "homepage": "https://github.com/kennethwang14/KennethStarterKit#readme"
+  "homepage": "https://github.com/kennethwang14/TSMSB#readme"
 }

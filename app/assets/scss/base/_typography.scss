@@ -25,16 +25,16 @@ html, body {
 
 
 @mixin heading-font {
-  // font-family: Impact, "Times New Roman", Times, serif;
-  // .fonts-loaded & {
+  font-family: Impact, "Times New Roman", Times, serif;
+  .fonts-loaded & {
     font-family: "nimbus-sans-condensed", "Helvetica Neue", Helvetica, arial, sans-serif;
-  //}
+  }
 }
 @mixin body-font {
-  // font-family: "proxima-nova", Helvetica, arial, sans-serif;
-  // .fonts-loaded & {
+  font-family: arial, sans-serif;
+  .fonts-loaded & {
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
-  //}  
+  }  
 }
 
 body {
