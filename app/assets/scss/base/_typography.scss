@@ -3,8 +3,64 @@
 // -----------------------------------------------------------------------------
 
 $line-height: 1.4;
-$heading-font: "nimbus-sans-condensed", "Helvetica Neue", Helvetica, arial, sans-serif;
-$body-font: "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-Lt.eot");
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-Lt.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Lt.woff2") format("woff2"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Lt.woff") format("woff"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Lt.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-It.eot");
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-It.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-It.woff2") format("woff2"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-It.woff") format("woff"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-It.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-Bd.eot");
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-Bd.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Bd.woff2") format("woff2"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Bd.woff") format("woff"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Bd.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-LtIt.eot");
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-LtIt.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-LtIt.woff2") format("woff2"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-LtIt.woff") format("woff"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-LtIt.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-Roman.eot");
+  src: url("/assets/fonts/subset-HelveticaNeueLTStd-Roman.eot?#iefix") format("embedded-opentype"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Roman.woff2") format("woff2"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Roman.woff") format("woff"),
+    url("/assets/fonts/subset-HelveticaNeueLTStd-Roman.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$heading-font: "Helvetica Neue", Helvetica, arial, sans-serif;
+$body-font: "Helvetica Neue", Helvetica, arial, sans-serif;
 
 html {
   font-size: 100%;
@@ -13,28 +69,20 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    height: 100%;
+html,
+body {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  height: 100%;
 }
-
-
-
 
 @mixin heading-font {
-  font-family: Impact, "Times New Roman", Times, serif;
-  .fonts-loaded & {
-    font-family: "nimbus-sans-condensed", "Helvetica Neue", Helvetica, arial, sans-serif;
-  }
+  font-family: $heading-font;
 }
 @mixin body-font {
-  font-family: arial, sans-serif;
-  .fonts-loaded & {
-    font-family: "proxima-nova", "Helvetica Neue", Helvetica, arial, sans-serif;
-  }  
+  font-family: $body-font;
 }
 
 body {
@@ -49,14 +97,14 @@ body {
 */
 
 $type-scale: (
-  hero: 6rem, // deviates from modular scale
+  hero: 6rem,
   sub-hero: 4.456rem,
   h1: 3.427em,
   h2: 2.636rem,
   h3: 2.028rem,
   h4: 1.56rem,
   p: 1.2rem,
-  small: 1.05rem // deviates from modular scale
+  small: 1.05rem
 );
 
 /* 
@@ -71,10 +119,9 @@ $type-scale-tablet: (
   h2: 2.417rem,
   h3: 1.859em,
   h4: 1.43rem,
-  p: 1.1rem, 
+  p: 1.1rem,
   small: 1rem
 );
-
 
 /* 
  * Modular scale
@@ -89,9 +136,8 @@ $type-scale-mobile: (
   h3: 1.512rem,
   h4: 1.26rem,
   p: 1.05rem,
-  small: 0.94rem // deviates from modular scale
+  small: 0.94rem
 );
-
 
 $breakpoint-tablet: 75em;
 $breakpoint-mobile: 45em;
@@ -99,10 +145,10 @@ $breakpoint-mobile: 45em;
 @mixin size($level) {
   font-size: map-get($type-scale, $level);
   @media (max-width: $breakpoint-tablet) {
-     font-size: map-get($type-scale-tablet, $level);
+    font-size: map-get($type-scale-tablet, $level);
   }
   @media (max-width: $breakpoint-mobile) {
-     font-size: map-get($type-scale-mobile, $level);
+    font-size: map-get($type-scale-mobile, $level);
   }
 }
 
@@ -111,40 +157,40 @@ $whitespace: $line-height * map-get($type-scale, p);
 @mixin margin-bottom($level) {
   margin-bottom: $line-height * map-get($type-scale, p) * $level;
   @media (max-width: $breakpoint-tablet) {
-     margin-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
+    margin-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
   }
   @media (max-width: $breakpoint-mobile) {
-     margin-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
+    margin-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
   }
 }
 
 @mixin margin-top($level) {
   margin-top: $line-height * map-get($type-scale, p) * $level;
   @media (max-width: $breakpoint-tablet) {
-     margin-top: $line-height * map-get($type-scale-tablet, p) * $level;
+    margin-top: $line-height * map-get($type-scale-tablet, p) * $level;
   }
   @media (max-width: $breakpoint-mobile) {
-     margin-top: $line-height * map-get($type-scale-mobile, p) * $level;
+    margin-top: $line-height * map-get($type-scale-mobile, p) * $level;
   }
 }
 
 @mixin padding-bottom($level) {
   padding-bottom: $line-height * map-get($type-scale, p) * $level;
   @media (max-width: $breakpoint-tablet) {
-     padding-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
+    padding-bottom: $line-height * map-get($type-scale-tablet, p) * $level;
   }
   @media (max-width: $breakpoint-mobile) {
-     padding-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
+    padding-bottom: $line-height * map-get($type-scale-mobile, p) * $level;
   }
 }
 
 @mixin padding-top($level) {
   padding-top: $line-height * map-get($type-scale, p) * $level;
   @media (max-width: $breakpoint-tablet) {
-     padding-top: $line-height * map-get($type-scale-tablet, p) * $level;
+    padding-top: $line-height * map-get($type-scale-tablet, p) * $level;
   }
   @media (max-width: $breakpoint-mobile) {
-     padding-top: $line-height * map-get($type-scale-mobile, p) * $level;
+    padding-top: $line-height * map-get($type-scale-mobile, p) * $level;
   }
 }
 
@@ -174,12 +220,11 @@ blockquote {
 
 cite {
   &:before {
-    content: '\2014 ';
+    content: "\2014 ";
   }
   color: color($grey, 400);
   display: block;
 }
-
 
 @mixin container($width: 60rem, $margin: 1, $padding: 0) {
   margin: auto;
